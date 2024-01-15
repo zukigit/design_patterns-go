@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/zukigit/design_patterns-go/pkg"
+	"github.com/zukigit/design_patterns-go/singleton/pkg"
 )
 
 func main() {
