@@ -20,12 +20,8 @@ func main() {
 	//builder
 	mng := new(builder.Mng)
 	bldr := new(builder.Phone)
-	
+
 	bldr.GetInstance("Sony", "1000000", 10)
 	mng.Register(bldr)
 	fmt.Println(mng.GetProduct())
-
-	// mng.Register(mng.Bldr.GetInstance("Sony", "1000000", 10))
-	// fmt.Println(mng.Bldr.GetProductInfo())
-	// register.GetProudct()
 }
