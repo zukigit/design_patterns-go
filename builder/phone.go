@@ -1,33 +1,25 @@
 package builder
 
 type Phone struct {
-	brand_name   string
-	price        string
-	product_type string
-	quantity     int
+	BrandName   string
+	Price       string
+	ProductType string
+	Quantity    int
 }
 
-func (phone *Phone) SetBrandName(name string) {
-	phone.brand_name = name
+func (phone *Phone) GetInstance(brand_name string, price string, quantity int) {
+	phone.BrandName = brand_name
+	phone.Price = price
+	phone.Quantity = quantity
+	phone.ProductType = "Phone"
+	// return Product{
+	// 	BrandName:   brand_name,
+	// 	Price:       price,
+	// 	ProductType: "Phone",
+	// 	Quantity:    quantity,
+	// }
 }
 
-func (phone *Phone) SetPrice(price string) {
-	phone.price = price
-}
-
-func (phone *Phone) SetProductType(pd_type string) {
-	phone.product_type = pd_type
-}
-
-func (phone *Phone) SetQuantity(quantity int) {
-	phone.quantity = quantity
-}
-
-func (phone *Phone) GetProduct() Product {
-	return Product{
-		brand_name:   phone.brand_name,
-		price:        phone.price,
-		product_type: phone.product_type,
-		quantity:     phone.quantity,
-	}
+func (phone *Phone) GetProductInfo() Product {
+	return Product(*phone) //that is fucking cool
 }

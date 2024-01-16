@@ -1,17 +1,13 @@
 package builder
 
 type Product struct {
-	brand_name   string
-	price        string
-	product_type string
-	quantity     int
+	BrandName   string
+	Price       string
+	ProductType string
+	Quantity    int
 }
 
 type Builder interface {
-	SetBrandName(name string)
-	SetPrice(price string)
-	SetProductType(pd_type string)
-	SetQuantity(quantity int)
-
-	GetProduct() Product
+	GetInstance(brand_name string, price string, quantity int)
+	GetProductInfo() Product
 }

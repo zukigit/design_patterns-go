@@ -1,20 +1,13 @@
 package builder
 
-type Register struct {
-	BrandName    string
-	Price        string
-	Product_Type string
-	Quantity     int
-	Builder      Builder
+type Mng struct {
+	bldr Builder
 }
 
-func (rgstr *Register) Register() {
-	rgstr.Builder.SetBrandName(rgstr.BrandName)
-	rgstr.Builder.SetPrice(rgstr.Price)
-	rgstr.Builder.SetProductType(rgstr.Product_Type)
-	rgstr.Builder.SetQuantity(rgstr.Quantity)
+func (mng *Mng) Register(bldr Builder) {
+	mng.bldr = bldr
 }
 
-func (rgstr *Register) GetProudct() Product {
-	return rgstr.GetProudct()
+func (mng *Mng) GetProduct() Product {
+	return mng.bldr.GetProductInfo()
 }

@@ -18,15 +18,14 @@ func main() {
 	fmt.Println(pkg1.Count, pkg2.Count)
 
 	//builder
-	phone := &builder.Phone{}
-	register := &builder.Register{
-		BrandName:    "sony",
-		Price:        "1000000",
-		Product_Type: "Phone",
-		Quantity:     100,
-		Builder:      phone,
-	}
+	mng := new(builder.Mng)
+	bldr := new(builder.Phone)
+	
+	bldr.GetInstance("Sony", "1000000", 10)
+	mng.Register(bldr)
+	fmt.Println(mng.GetProduct())
 
-	fmt.Println(register)
+	// mng.Register(mng.Bldr.GetInstance("Sony", "1000000", 10))
+	// fmt.Println(mng.Bldr.GetProductInfo())
 	// register.GetProudct()
 }
